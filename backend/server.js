@@ -8,11 +8,13 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 const healthRoute = require("./routes/health");
+const analyzeRoute = require("./routes/analyze");
 
 app.use(cors());
 app.use(express.json());
 
 app.use("/health", healthRoute);
+app.use("/analyze", analyzeRoute);
 
 app.get("/", (req, res) => {
   res.send("AI Investment Research Agent Backend 🚀");
